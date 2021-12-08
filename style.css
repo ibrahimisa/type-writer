@@ -22,4 +22,19 @@ body {
     body .container h2 {
       font-size: 2rem; }
 
+@media screen and (max-width: 938px) {
+  body .container {
+    padding-left: 1rem; }
+    body .container h1 {
+      font-size: 1.7rem; }
+    body .container h2 {
+      font-size: 1rem; } }
+@media screen and (max-width: 342px) {
+  body .container {
+    padding-left: .4rem; }
+    body .container h1 {
+      font-size: 1.4rem; }
+    body .container h2 {
+      font-size: 1rem; } }
+
 /*# sourceMappingURL=style.css.map */

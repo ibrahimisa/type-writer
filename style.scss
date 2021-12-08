@@ -35,3 +35,31 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 938px) {
+  body {
+    .container {
+      padding-left: 1rem;
+      h1 {
+        font-size: 1.7rem;
+      }
+      h2{
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 342px) {
+  body {
+    .container {
+      padding-left: .4rem;
+      h1 {
+        font-size: 1.4rem;
+      }
+      h2{
+        font-size: 1rem;
+      }
+    }
+  }
+}
