@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.5)), url(showcase.jpg);
+    background : {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 0 3rem;
+        color: burlywood;
+
+        h1{
+            font-size: 4rem;
+        }
+        h2{
+            font-size: 2rem;
+        }
+    }
+}
