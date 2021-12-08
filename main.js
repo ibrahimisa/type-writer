@@ -1,13 +1,21 @@
-const words = ["Dev", "Learner", "Blah"];
-let paper = document.getElementById("paper");
-let cursor = document.getElementById("cursor");
+const paper = document.querySelector('.paper');
+const words = JSON.parse(paper.dataset.words);
+let waitTime = parseInt(paper.dataset.wait, 10);
+const speed = parseInt(paper.dataset.typeSpeed, 10);
+const cursor = paper.dataset.cursor;
+
 let wordIndex = 0;
 let letterIndex = 0;
-let isTyping = true
+let isTyping = true;
+
+// append cursor to the end of text
+let cursorSpan = document.createElement('span')
+cursorSpan.textContent = cursor;
+paper.parentElement.appendChild(cursorSpan)
 
 function type(){
   let word = words[wordIndex]
-  let typeSpeed = 500;
+  let typeSpeed = speed;
 
   if(isTyping){
     // if isTyping is true append next letter to dom
@@ -23,7 +31,7 @@ function type(){
       else wordIndex++;
 
       letterIndex = 0;  // reset letterIndex
-      typeSpeed = 3000; // if last word increase waiting time
+      typeSpeed = waitTime; // if last word increase waiting time
       isTyping = false;
     }
 
@@ -32,10 +40,10 @@ function type(){
     paper.textContent = paper.textContent.slice(0, -1);
     typeSpeed /= 2; // decrease the waiting time to make it delete faster
     
-    // check if has finished deleting
+    // check if has finished deleting (when it reaches the end)
     if(paper.textContent === ''){
       isTyping = true;
-      typeSpeed = 3000;
+      typeSpeed = waitTime;
     }
   }
 
@@ -45,8 +53,8 @@ function type(){
 }
 
 function blinkCursor(){
-    let visibility = cursor.style.visibility
-    cursor.style.visibility = visibility == 'hidden' ? 'visible' : 'hidden'
+    let visibility = cursorSpan.style.visibility
+    cursorSpan.style.visibility = visibility == 'hidden' ? 'visible' : 'hidden'
 }
 
 window.addEventListener("DOMContentLoaded", () => {
